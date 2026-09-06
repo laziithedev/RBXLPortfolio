@@ -17,8 +17,8 @@
 /* Your name + the Carrd site every "Back to portfolio" button points at.
    Change these two lines once and every page updates. */
 window.SITE = {
-  name:  "laziithedev",
-  carrd: "https://YOUR-CARRD-SITE.carrd.co"
+  name:  "kiyo",
+  carrd: "https://kiyodev.carrd.co/"
 };
 
 window.PROJECTS = [
