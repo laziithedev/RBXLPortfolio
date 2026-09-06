@@ -53,9 +53,11 @@
       'with <code>category: "' + esc(cat) + '"</code>.</div>';
   } else {
     grid.innerHTML = items.map(function (p, i) {
-      var thumb = p.thumb
-        ? '<img src="' + esc(p.thumb) + '" alt="' + esc(p.title) + '" loading="lazy">'
-        : '<div class="ph">no preview yet</div>';
+      /* placeholder sits underneath; a missing image just hides itself */
+      var thumb = '<div class="ph">no preview yet</div>' + (p.thumb
+        ? '<img src="' + esc(p.thumb) + '" alt="' + esc(p.title) + '" loading="lazy"' +
+          ' onerror="this.remove()">'
+        : "");
       var badge = p.badge ? '<span class="badge">' + esc(p.badge) + "</span>" : "";
       var year = p.year ? '<span class="yr">' + esc(p.year) + "</span>" : "";
       var tags = (p.tags || []).map(function (t) {
